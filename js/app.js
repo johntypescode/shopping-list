@@ -16,7 +16,7 @@ window.onload = () => {
 			newListItem.textContent = newItemValue;
 			shoppingList.appendChild(newListItem);
 		} else {
-			alert('Error: item should container at least four (4) characters; try again.');
+			alert('Error: item should containe at least four (4) characters; try again.');
 			return;
 		}
 	});
