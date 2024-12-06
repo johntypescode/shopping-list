@@ -14,6 +14,14 @@ window.onload = () => {
 		if(newItemValue.length >= 4) {
 			const newListItem = $.createElement('li');
 			newListItem.textContent = newItemValue;
+
+			// Add a delete button to each new list item
+			const deleteBttn = $.createElement('button');
+			deleteBttn.innerText = 'Delete -'
+			deleteBttn.onclick = () => {
+				shoppingList.removeChild(newListItem);
+			};
+			newListItem.appendChild(deleteBttn);
 			shoppingList.appendChild(newListItem);
 		} else {
 			alert('Error: item should containe at least four (4) characters; try again.');
