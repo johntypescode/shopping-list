@@ -18,7 +18,8 @@ window.onload = () => {
 			// Add a delete button to each new list item
 			const deleteBttn = $.createElement('button');
 			deleteBttn.innerText = 'Delete -'
-			deleteBttn.onclick = () => {
+			deleteBttn.onclick = (e) => {
+				e.preventDefault();
 				shoppingList.removeChild(newListItem);
 			};
 			newListItem.appendChild(deleteBttn);
