@@ -25,7 +25,7 @@ window.onload = () => {
 			newListItem.appendChild(deleteBttn);
 			shoppingList.appendChild(newListItem);
 		} else {
-			alert('Error: item should containe at least four (4) characters; try again.');
+			alert('Error: item should contain at least four (4) characters; try again.');
 			return;
 		}
 	});
