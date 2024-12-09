@@ -29,10 +29,19 @@ window.onload = () => {
 			deleteBttn.onclick = (e) => {
 				e.preventDefault();
 				shoppingList.removeChild(newListItem);
+
+				// List item count should also be updated upon deletion
+				let totalListItems = $.querySelectorAll('li').length;
+				$.querySelector('h3#list-count-summary').textContent = `${totalListItems} items on your list.`;	
 			};
 			newListItem.appendChild(itemCheckbox);
 			newListItem.appendChild(deleteBttn);
 			shoppingList.appendChild(newListItem);
+
+			// Update the number of items on the list
+			let totalItems = $.querySelectorAll('li').length;
+			const listSummary = $.querySelector('h3#list-count-summary');
+			listSummary.textContent = `${totalItems} items on your list.`;
 
 			// Clear the value and refocus input
 			newItemInput.value = '';
