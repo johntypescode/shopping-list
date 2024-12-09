@@ -21,7 +21,9 @@ window.onload = () => {
 			itemCheckbox.onclick = () => {
 				newListItem.classList.toggle('done');
 			};
-			newListItem.textContent = newItemValue;
+			
+			const newItemDesc = $.createElement('div');
+			newItemDesc.textContent = newItemValue;
 
 			// Add a delete button to each new list item
 			const deleteBttn = $.createElement('button');
@@ -34,6 +36,7 @@ window.onload = () => {
 				let totalListItems = $.querySelectorAll('li').length;
 				$.querySelector('h3#list-count-summary').textContent = `${totalListItems} items on your list.`;	
 			};
+			newListItem.appendChild(newItemDesc);
 			newListItem.appendChild(itemCheckbox);
 			newListItem.appendChild(deleteBttn);
 			shoppingList.appendChild(newListItem);
