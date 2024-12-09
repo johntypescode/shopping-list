@@ -24,6 +24,10 @@ window.onload = () => {
 			};
 			newListItem.appendChild(deleteBttn);
 			shoppingList.appendChild(newListItem);
+
+			// Clear the value and refocus input
+			newItemInput.value = '';
+			newItemInput.focus();
 		} else {
 			alert('Error: item should contain at least four (4) characters; try again.');
 			return;
