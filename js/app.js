@@ -13,6 +13,14 @@ window.onload = () => {
 
 		if(newItemValue.length >= 4) {
 			const newListItem = $.createElement('li');
+
+			// Add a checkbox to mark item off of the list
+			const itemCheckbox = $.createElement('input');
+			itemCheckbox.setAttribute('type', 'checkbox');
+			itemCheckbox.setAttribute('class', 'delete-item');
+			itemCheckbox.onclick = () => {
+				newListItem.parentElement.classList.toggle('done');
+			};
 			newListItem.textContent = newItemValue;
 
 			// Add a delete button to each new list item
@@ -22,6 +30,7 @@ window.onload = () => {
 				e.preventDefault();
 				shoppingList.removeChild(newListItem);
 			};
+			newListItem.appendChild(itemCheckbox);
 			newListItem.appendChild(deleteBttn);
 			shoppingList.appendChild(newListItem);
 
