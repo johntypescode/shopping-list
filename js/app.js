@@ -19,7 +19,7 @@ window.onload = () => {
 			itemCheckbox.setAttribute('type', 'checkbox');
 			itemCheckbox.setAttribute('class', 'delete-item');
 			itemCheckbox.onclick = () => {
-				newListItem.parentElement.classList.toggle('done');
+				newListItem.classList.toggle('done');
 			};
 			newListItem.textContent = newItemValue;
 
